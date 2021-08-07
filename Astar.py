@@ -43,10 +43,7 @@ class Node:
      
     # These functions are used to color the nodes
     def is_barrier(self):                       
-        return self.color == BLACK
-     
-    def reset(self):                         
-        self.color = WHITE                  
+        return self.color == BLACK                
     
     def change_color(self, new_color):
         self.color = new_color
@@ -321,7 +318,7 @@ def main(win, width):
                 pos = pygame.mouse.get_pos()
                 rows, col = get_clicked_pos(pos, ROWS, width)
                 node = grid[rows][col]
-                node.reset()                        # Reseting node to white
+                node.change_color(WHITE)                        # Reseting node to white
                 
                 if node == start:
                     start = None
